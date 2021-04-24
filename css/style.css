@@ -1,0 +1,458 @@
+*{font-family: 'days one';outline: none;transition: 0.3s ease-in-out;z-index: 0;scroll-behavior: smooth;
+/*border:1px solid red;*/
+scroll-padding: 25px;
+}
+::-webkit-scrollbar{width: 5px;}
+::-webkit-scrollbar-track{border-radius:2px;background: #f1f1f1;}
+::-webkit-scrollbar-thumb {border-radius:2px;background: #888; }
+::-webkit-scrollbar-thumb:hover{background: #555;}
+
+body{background:white; text-align: center;}
+button, a {cursor: pointer;}
+
+#ldScrn{position: fixed;height: 99.9%;width: 100%;background-color: white;transform: translateY(1px);z-index: 100;top: 0;left: 0;}
+#ldScrn svg{position: absolute;left: 50%;top: 50%;width: 8vmax;height: 8vmax;margin: -4vmax;border-radius: 50%;border: 4px solid transparent;border-top-color: #FFFFFF;animation: loadScrn 2s infinite linear;}
+
+.homeHead{background-color:rgba(50,120,150);height:250px;border-radius: 15px;padding: 10px;text-align: center;}
+.homeHead h1{display: inline;font-size: 50px;color:white;margin-top: 5px;clear: both;}
+.homeHead p{color:white;font-size: 25px;}
+.homeHead .menu{text-align: right;padding: 0;float:right;position:absolute;right:30px;top:5px;transition: 0.5s ease;}
+.homeHead .menu button.prof{font-size: 20px;background: transparent;font-weight: bold;border: none;}
+.homeHead .menu button.prof img{background: white;border-radius: 50%;border:white 2px solid;width:50px;height:50px;vertical-align: middle;object-fit: cover;}
+.homeHead .menu div.menuOptions{text-align: right; transform: translateX(15px);display: none;border-left: rgba(15,105,150,0.5) 15px solid;border-radius: 5px;}
+.homeHead .menu div.menuOptions:hover{border-left-color: white;}
+.homeHead .menu div.menuOptions button{width:175px;background: rgba(50,120,150,0.75);border:none;color:white;border-radius: 0px;}
+.homeHead .menu div.menuOptions button:hover{color:rgb(50,120,150);background: white;}
+.homeHead .menu div.menuOptions button:active{transform: scale(1.1);}
+.homeHead .quesChar{left:0px;position: absolute;}
+.homeHead div input{width: 550px;font-size: 20px;border-radius: 2px;border:white 3px solid;background: transparent;color:white;padding: 10px;border-top-right-radius: 0px;border-bottom-right-radius: 0px;}
+.homeHead div input::placeholder{color:rgba(10,10,10,0.5);}
+.homeHead div button{font-size: 20px;border-radius: 2px;border:white 3px solid;background: white;color:rgba(50,120,150);padding: 10px;border-top-left-radius: 0px; border-bottom-left-radius: 0px;border-left-width:0px;width:50px;}
+.homeHead div button img{width:22px;vertical-align: middle;}
+.homeHead div button:hover img{transform: rotate(360deg);}
+.homeBase{padding: 10px;text-align: center;}
+.homeBase button{float:right;color:rgba(50,120,150);font-size: 25px;margin-right: 10px;background: transparent;border:none;border:3px solid rgb(50,120,150);padding: 2px 15px;}
+.homeBase button:hover{color:white;border-color: rgb(50,120,150);background: rgb(50,120,150);}
+.homeBase button:active{color:white;border-color: rgb(50,120,150);background: rgb(50,120,150);border-radius: 50px;}
+.homeBase h1{clear: both; color:rgb(50,100,140);}
+.homeBase .hotQues{text-align: center;margin-top: 10px;}
+#qmark{animation: qmarkMove 2s infinite;transform-origin: center;}
+#head1{animation: quesHead1 3s infinite;transform-origin:20%;}
+#head2{animation: quesHead2 4s infinite;transform-origin:center;}
+#hand2{animation: quesHead2 2s infinite;transform-origin:center;}
+a.menuQues{border:3px solid rgba(50,120,150,0.5);display: inline-block;width:75%;text-decoration:none;color:rgb(50,120,150);margin-bottom: 10px;}
+a.menuQues .upvt{width:55px;height:100%;float: left;border-right: rgba(50,100,140,0.5) 2px solid;}
+a.menuQues .ques{margin-left: 10px;}
+a.menuQues .ques .title{font-size: 20px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;padding: 0px 5px;font-weight: bold;width: calc(90% - 60px);margin-top: 15px;text-align: left;}
+a.menuQues .ques .descr{font-size: 15px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;padding: 0px 5px;width:calc(100% - 70px);margin-top: -10px;text-align: left;}
+a.menuQues:hover, a.menuQues:active{background: rgba(50,120,150,0.125);}
+.authHead{background-color:rgba(50,120,150);height:65px;border-radius: 15px;padding: 10px;text-align: center;}
+.authHead h1{display: inline;font-size: 50px;color:white;margin-top: 5px;}
+.sign{top:50%;left:50%;position:absolute;transform:translate(-50%,-50%); width:50%;border:2px rgb(50,120,150) solid;padding: 15px; background: rgba(50,120,150);border-radius: 5px;}
+.sign h1{display: inline-block;}
+.sign input, #subm{width:90%;border:2px white solid;color:white;background: transparent;padding: 5px;font-size: 25px;margin-bottom: 10px;border-radius: 2px;box-sizing: border-box;}
+#subm img{width:25px;vertical-align: middle;}
+#subm, .sign input[type=button]{background-color:rgba(255,255,255,0.25);color:white;}
+#subm:hover, .sign input[type=button]:hover{background-color:white;color:rgb(50,120,150);}
+#subm:active, .sign input[type=button]:active{background-color:white;color:rgb(50,120,150);border-radius: 50px;}
+.sign input::placeholder{color:rgba(10,10,10,0.5);}
+.up{margin-top: 40px;}
+.in{margin-top: 25px;}
+.helloChar{transform:translate(300px,-95px);}
+#helloHand{animation: helloHand 2s infinite;transform-origin:25% 25%;}
+.standChar{transform:translate(100px,245px);position:absolute;}
+#standHead1{animation: standHead 3s infinite;transform-origin:25% 25%;}
+#err{color:red;float: left;margin-top: 25px;font-size: 20px;font-weight: lighter;border:red 2px solid;position: absolute;padding: 5px;min-width: 150px;background-color: pink;opacity: 0;transition: 0.3px ease-in-out;z-index: 9999;}
+.profile{padding: 10px;width: 75%;margin: auto;margin-top: 10px;background-color: rgba(50,120,150,0.2);border-radius: 5px;transition: 0.3s ease-in-out;text-align: center;}
+.profile .ls, .profile .rs{width:40%;margin:auto;display: inline-block;padding: 5px;}
+.profile .ls, .profile .rs{text-align: center;}
+.profile .ls img{border-radius: 500px;border:5px solid rgb(50,120,150);background-color: white;vertical-align: middle;width:200px;height: 200px;object-fit: cover;}
+.profile .rs button{padding: 15px;font-size: 20px;border:rgb(50,120,150) solid 3px;;border-radius: 5px;color: rgb(50,120,150);background: transparent;}
+.profile * span{font-size: 20px;color:rgb(50,120,150);word-wrap: break-word;}
+.profile .rs button:hover{background: rgb(50,120,150);color: white}
+.profile .rs button:active{border-radius: 50px;}
+.profile .rs .profPcSlct{font-size:13.3px;padding:10px;margin-bottom: 5px;}
+.profile .dispProfPic img{border-radius: 500px;border:5px solid rgb(50,120,150);background-color: white;vertical-align: middle;width:200px;height: 200px;object-fit: cover;}
+#rmvImg:disabled{color:rgba(50,120,150,0.5) !important; background-color: transparent !important; border-color: rgba(50,120,150,0.5);}
+.standChar2{margin:auto;position: absolute;right:calc(50% - 35px);}
+#standHead2{animation: standHead2 2s infinite;transform-origin:25% 25%;}
+#standHand2{animation: standHand2 3s infinite;transform-origin: 20px;}
+.dltMsg{color:rgb(50,120,150);font-size: 25px;margin-top: 10px;display: inline-block;}
+.dltConf{padding: 50px;width: 75%;margin: auto;margin-top: 10px;background:rgba(255,120,120,0.5);border-radius: 5px;transition: 0.3s ease-in-out;text-align: center;}
+.dltConf input{width:90%;border:3px red solid  !important;color:black;background: transparent;padding: 5px;font-size: 25px;margin-bottom: 10px;border-radius: 5px;box-sizing: border-box;}
+.dltConf input[type=submit],.dltConf input[type=button]{color: red !important; width: 44.5% !important;}
+.dltConf input[type=submit]:hover,.dltConf input[type=button]:hover{color: pink  !important;background-color: red  !important;}
+.dltConf input::placeholder{color:rgba(10,10,10,0.5);}
+#waitHead{animation: waitHead 3s infinite;transform-origin: center;}
+#waitEclm{animation: waitEclm 1.5s infinite;transform-origin: top;}
+#waitArm1{animation: waitArm1 1.5s infinite;transform-origin: top;}
+#waitArm2{animation: waitArm2 1.5s infinite;transform-origin: top;}
+.byeChar{margin-top: 40px;}
+#byeHead1{animation: byeHead1 1.5s infinite;transform-origin: center;}
+#byeHand1{animation: byeHand1 1s infinite;transform-origin: 70%;}
+.chngPswd{width:50%;background-color: rgb(50,120,150);margin:auto;text-align: center;margin-top: 50px;padding: 15px;border-radius: 5px;}
+.chngPswd input{width:90%;border:2px white solid;color:white;background: transparent;padding: 5px;font-size: 25px;margin-bottom: 10px;border-radius: 2px;box-sizing: border-box;}
+.chngPswd input::placeholder{color:rgba(10,10,10,0.5);}
+.chngPswd input[type=submit], .chngPswd input[type=button]{background-color:rgba(255,255,255,0.25);width:44.5% !important;}
+.chngPswd input[type=submit]:hover, .chngPswd input[type=button]:hover, .chngPswd input[type=submit]:active{color:rgb(50,120,150);background-color: white;}
+.chngPswd input[type=submit]:active, .chngPswd input[type=button]:active{border-radius: 50px;}
+.pswdChar{margin-top: 10px;}
+#passHand1{animation: passHand1 3s infinite;transform-origin: 70%;}
+.askQues{background-color: rgba(50,120,150,0.2);width: 90%;margin:auto;margin-top: 25px;padding: 15px;border-radius: 5px;text-align: center;}
+.askQues input, .askQues textarea, #prw, #tgs{padding:15px;font-size: 17px;border: rgb(50,120,150) solid 3px;border-radius: 5px;color: rgb(50,100,150);background: transparent;width:85%;margin-bottom: 10px;resize: none;box-sizing: border-box;}
+.askQues input[type=submit], .askQues input[type=button]{font-size: 20px;color:rgb(50,120,150);}
+.askQues input[type=submit]:hover, .askQues input[type=button]:hover,.askQues input[type=submit]:active, .askQues input[type=button]:active{color:white;background: rgb(50,120,150);}
+.askQues input[type=submit]:active, .askQues input[type=button]:active{border-radius: 50px;}
+.askQues input::placeholder{color:rgba(10,10,10,0.5);}
+.askQues label{font-size: 30px;color: rgb(50,120,150);}
+.askQues .wrdCnt{color:rgb(50,120,150);padding: 5px;}
+.askQues .btns{padding: 5px;}
+.askQues .btns button{padding: 5px;text-align: center;min-width: 40px;border:rgba(50,120,150,0.75) 2px solid;background: transparent;color:rgba(50,120,150,1);}
+.askQues .btns *:hover, .askQues .btns *:active{background: rgba(50,120,150,1);color: white;}
+.askQues .btns *:active{border-radius: 50px;}
+.askQues .alrt{color:red;font-size: 25px;position:absolute;vertical-align: middle;transform:translate(-30px,10px);z-index: 999;display: none;}
+.askQues .tag{color:white;text-align: left;background: rgba(50,120,150,0.75);width:80%;margin:auto;word-break: break-all;padding: 10px;margin-bottom: 10px;border-radius: 5px;}
+
+#prw{min-height: 25px;margin:auto;border: none;text-align: left;word-break: break-all;font-weight:normal;font-family: Arial}
+#prw *{font-family: Arial}
+#prw p{display: inline;}
+p.code{background: rgba(10,10,10,0.125);padding: 0px 5px;unicode-bidi: embed;white-space: pre;display: block !important;}
+p.bold{font-weight: bold;}
+p.ilcs{font-style: italic;}
+p.undr{text-decoration: underline;}
+p.quot{padding: 10px 5px;display: block !important;background: rgba(50,120,150,0.2);border-left: rgba(50,120,150,0.5) 5px solid;width:100%;}
+#prw a{font-family: arial;}
+
+#prw a{color:rgb(12,50,100);}
+
+#tagDisp{padding: 10px; word-break: break-all;}
+#tagDisp p{color:white;background: rgb(50,80,100);display: inline-block;padding: 10px;font-size: 20px;border-radius: 15px;margin-left:10px;margin-bottom:5px;}
+
+#thinkHand{animation: thinkHand 3s infinite;transform-origin: center;}
+#thinkHead{animation: thinkHead 4s infinite;transform-origin: center;}
+
+.dispQues{margin:auto;border: none;text-align: left;font-weight:normal;padding: 50px;color: rgb(50,70,120);background: rgba(10,10,10,0.1);border-radius: 5px;margin-top: 25px;}
+.dispQues .titl{font-size: 25px;font-weight: lighter;display: block;word-break:break-all;}
+.dispQues .desc{font-size: 25px;font-size: 20px;font-family: Arial;word-break:break-all;letter-spacing: 1px;}
+.dispQues .desc p{display: inline;font-family: Arial !important;}
+.dispQues .desc a{font-family: arial;}
+
+.vote {text-align: center;}
+.vote .voteArr{transition:0.3s ease;}
+.vote .arrTop{fill:rgb(175,175,175);stroke:none;}
+.vote .voteArr:hover .arrTop{fill:rgb(12,100,150);}
+.vote .voteArr:active .arrTop{fill:rgb(12,100,150) !important;transform:translateY(-100px);}
+.vote .brkLn{display: none;}
+.vote span{font-size:25px;display: block;}
+
+.dispUser{text-align: right;margin-top: 15px;}
+.dispUser img{width:50px;height:50px;vertical-align: middle;border-radius: 50px;border:rgb(12,100,150) 5px solid;background: white;object-fit: cover;transform:translateX(5px) translatey(-2px);}
+.dispUser span{font-size: 25px;color: rgb(12,100,150);}
+.dispUser span span{border-radius: 100px;border:rgb(12,100,150) 5px solid;padding: 5px 0px 5px 15px;width:10px;}
+.dispUser span span:hover{color:white;background-color: rgb(12,100,150);cursor: pointer;}
+.quesTask{text-align: left;}
+.quesTask a{font-family: Arial;text-decoration: none;display: inline-block;color:rgb(12,100,150);}
+.quesTask a:hover{transform: translateY(-2px);}
+
+#ansMesg{animation: ansMesg 3s infinite;transform-origin: center;}
+#ansHead{animation: ansHead 4s infinite;transform-origin: center;}
+#ansHand{animation: ansHand 2.5s infinite;transform-origin: center;}
+
+
+.wrtRepl{width: 80%;background: rgba(12,100,150,0.2);margin: auto;border-radius: 5px;padding: 15px;}
+.wrtRepl div{background: rgba(12,100,150,0.1);padding: 0px;border-radius: 5px;text-align: left;}
+.wrtRepl div textarea{padding: 15px;font-size: 17px;border: rgb(50,120,150) solid 3px;border-radius: 5px;color: rgb(50,100,150);background: rgb(0 0 0 / 0%);width: 100%;margin-bottom: -5px;resize: none;box-sizing: border-box;border-top-left-radius: 0px;}
+.wrtRepl div button{padding: 5px;text-align: center;min-width: 40px;border: rgb(50 120 150 / 75%) 2px solid;background: rgb(0 0 0 / 0%);color: rgb(50 120 150);}
+.wrtRepl div button:hover{color:white;background: rgb(50,120,150);}
+.wrtRepl .wrdCnt{color:rgb(50 120 150);}
+.wrtRepl button[type="submit"]{padding: 15px;font-size: 17px;border: rgb(50,120,150) solid 3px;border-radius: 5px;color: rgb(50,100,150);background: rgb(0 0 0 / 0%);width: 100%;}
+.wrtRepl button[type="submit"]:hover{color:white;background: rgb(50,120,150);}
+
+#starHead{animation: starHead 2s infinite;transform-origin: center;}
+#starShot{animation: starShot 5s infinite;transform-origin: center;}
+
+.dispRepl{margin:auto;border: none;text-align: left;font-weight:normal;padding: 25px;color: rgb(50,70,120);margin-top: 25px;}
+.dispRepl .replies {background: rgba(10,10,10,0.1);border-radius: 5px;padding:30px;}
+.dispRepl .replies .repl{font-size: 25px;font-size: 17px;font-family: Arial;word-break:break-all;letter-spacing: 1px;display: block;}
+.dispRepl .replies .repl p{display: inline;font-family: Arial !important;}
+.dispRepl .replies .repl a{font-family: arial;}
+
+.dispRepl .replies .user{text-align:right;}
+.dispRepl .replies .user img{width:50px;height:50px;vertical-align: middle;border-radius: 50px;border:rgb(12,100,150) 3px solid;background: white;object-fit: cover;transform:translateX(5px) translatey(-2px);}
+.dispRepl .replies .user span{border-radius: 100px;border:rgb(12,100,150) 3px solid;padding: 5px 0px 5px 15px;width:10px;color:rgb(12,100,150);}
+.dispRepl .replies .user span:hover{color:white;background-color: rgb(12,100,150);cursor: pointer;}
+
+.dispRepl .replies .vote{text-align: center;}
+
+.dispRepl .replies .replTask a{font-family: Arial !important;color:rgb(12,100,150);text-decoration: none;display: inline-block;}
+.dispRepl .replies .replTask a:hover{transform: translateY(-2px);}
+
+#editHead{animation: editHead 3s infinite;transform-origin: center;}
+#editPol1, #editPol2{animation: editPols 10s linear infinite;transform-origin: center;transform-box:fill-box;}
+
+#edtR{top:0;bottom:0;left:0;right:0;background: rgb(15,15,15);position: fixed;opacity: 0;z-index: 999;display: none;backdrop-filter: blur(5px);overflow: scroll;}
+#edtR button.cls{color:white;font-size:25px;border:rgb(12,100,150) solid 3px;display: block;text-align: center;background: transparent;border-top: non;width: 100%;padding: 10px;border-bottom-left-radius:25px;border-bottom-right-radius:25px;background: rgb(12,100,150);text-shadow: 2px 2px rgb(15,15,15);}
+#edtR button.cls:hover, #edtR button.cls:active{border-bottom-left-radius:50px;border-bottom-right-radius:50px;}
+.edtRepl{margin:auto;margin-top: 50px;background: rgb(12,100,150);width: 90%;text-align: left;}
+.edtRepl textarea{padding: 15px;font-size: 17px;border: rgb(50,120,150) solid 3px;border-radius: 5px;color: rgb(50,100,150);background: rgb(0 0 0 / 0%);width: 100%;margin-bottom: -5px;resize: none;box-sizing: border-box;border-top-left-radius: 0px;background: white;}
+.edtRepl button{padding: 5px;text-align: center;min-width: 40px;border: rgb(50 120 150 / 75%) 2px solid;background: rgb(0 0 0 / 0%);color: rgb(50 120 150);background: white;}
+.edtRepl button:hover{color:white;background: rgb(50,120,150);}
+.edtRepl .wrdCnt{color:rgb(50 120 150);}
+.edtRepl button[type="submit"]{padding: 15px;font-size: 17px;border: rgb(50,120,150) solid 3px;border-radius: 5px;color: white;background: rgb(50,120,150);width: 100%;}
+.edtRepl button[type="submit"]:hover{transform:scale(1.005);}
+#edtRpw{width:calc(100% - 34px);display: inline-block;background: rgb(255,255,255);color:rgb(12,100,150);border: rgb(12,100,150) 2px solid;padding: 15px;font-family: arial;word-break: break-all;}
+#edtRpw *{width:90%;display: inline;font-family: arial;}
+#edtWrdCnt{color:white;}
+
+.verif{position: absolute;transform: translateY(-50px);}
+.verif button{border-radius: 50%;height:65px;width: 65px;text-align: center;background: transparent;border:3px solid rgba(12,100,150,0);padding: 5px;}
+.verif button svg{vertical-align: middle;}
+.verif button:hover{border:3px solid rgb(12,100,150);}
+.verif button:active{transition:0.5s ease;transform: rotate(360deg) scale(0);}
+
+#rprt{top:0;bottom:0;left:0;right:0;background: rgb(15,15,15);position: fixed;opacity: 0;z-index: 999;display: none;backdrop-filter: blur(5px);overflow: scroll;transition: none;}
+#rprt button.cls{color:white;font-size:25px;border:rgb(12,100,150) solid 3px;display: block;text-align: center;background: transparent;border-top: non;width: 100%;padding: 10px;border-bottom-left-radius:25px;border-bottom-right-radius:25px;background: rgb(12,100,150);text-shadow: 2px 2px rgb(15,15,15);}
+#rprt button.cls:hover, #rprt button.cls:active{border-bottom-left-radius:50px;border-bottom-right-radius:50px;}
+#rprt .main{text-align: left;margin: auto;margin-top: 50px;width:400px;}
+#rprt .main label{color: white;font-size: 25px;padding: 15px;}
+#rprt .main input{display: none;}
+#rprt .main div{display: inline-block;background-color: white;width: 25px;height: 25px;border-radius: 50%;text-align: center;}
+#rprt .main span{background-color: rgb(12,100,150);display: inline-block;width: 20px;height: 20px;border-radius: 50%;visibility: hidden;margin-top:10%;}
+#rprt .main input:checked ~ span{visibility: visible;}
+#rprt button.subm{width: 100%;margin-top: 10px;font-size: 25px;color:rgb(12,100,150);background-color: transparent;border:rgb(12,100,150) 2px solid;padding: 5px;border-radius: 5px;}
+#rprt button.subm:hover, #rprt button.subm:active{color:white;background-color: rgb(12,100,150);}
+#rprt button.subm:active{border-radius: 50px;}
+
+.setngsOptn{position: absolute;display: block;}
+.setngsOptn:hover{transform: rotate(720deg);}
+.setngsOptn:active{transform: rotate(-720deg);}
+
+#flagHead{animation: flagHead 3s infinite;transform-origin: center;}
+#flagHand{animation: flagHand 2s infinite;transform-origin: center;}
+
+#standHead3{animation: standHead3 3s infinite;transform-origin: center;}
+#standHair3{animation: standHead3 3s infinite;transform-origin: center;}
+
+#standArm13{animation: standArm13 2s infinite;transform-origin: center;}
+#standArm23{animation: standArm23 2.1s infinite;transform-origin: center;}
+
+#standHead4{animation: standHead3 3s infinite;transform-origin: center;}
+
+#standNotif1{transform: translateY(-100%);animation: standnotif 3s infinite;transform-origin: center;}
+#standNotif2{transform: translateY(-100%);animation: standnotif 3s infinite;transform-origin: center;animation-delay: .15s;}
+#standNotif3{transform: translateY(-100%);animation: standnotif 3s infinite;transform-origin: center;animation-delay: .3s;}
+
+.achievements{padding: 15px;margin:auto;width:90%;margin-top: 50px;margin-bottom: 50px;}
+.achv{background-color: rgba(12,100,150,0.25);margin-bottom: 10px;padding:10px;text-align: left;border-radius: 5px;min-height: 80px;}
+.achv svg{width: 75px;height: 75px;vertical-align: middle;position: absolute;display: inline-block;}
+.achv .det{margin-left: 100px;margin-top: 20px;text-align: center;}
+.achv .det span{color:rgb(50,100,150);font-family: arial;word-break: break-all;}
+.achv .det span a{color:rgb(50,100,150);font-family: arial;}
+.achv .prog{height:20px;width:calc(100% - 15px);display: inline-block;border: 2px rgb(12,100,150) solid;transform: translateY(-10px);text-align: left;border-radius: 50px;}
+.achv .prog span{color:black;position:absolute;margin-left:calc(50% - 25px);color:rgb(255,255,255);text-shadow: 0 0 3px rgb(12,100,150), 0 0 3px rgb(12,100,150);font-family: 'Days One';z-index: 2;}
+.achv .prog .bar{display: inline-block;background-color: rgb(12,100,150);height:100%;border-radius: 50px;width:0%;}
+.achDone{animation: achDone 1s;}
+
+.dispAchv svg{width:100px;height:100px;}
+.dispAchv div{width:33.3%;margin: auto;float: left; margin-bottom: 25px;height: 150px;}
+.dispAchv div span{font-family: Arial;font-size:15px;display: block;}
+.dispAchv div span a{font-family: Arial;color:inherit;}
+.dispAchv::after{clear: both;content: '';display: table;}
+
+.notif{padding: 15px;margin:auto;width:90%;margin-top: 50px;margin-bottom: 50px;transform: translateX(-10px);}
+.notif > div > button{background: transparent;border: none;position: absolute;right:5px;top:10px;border-radius:50px;width:25px;height:25px;text-align: center;}
+.notif > div > button:hover{background: white;}
+.notif > div > button:active{transform: rotate(360deg)}
+.notif > div > button > svg{fill: rgb(12,50,100);vertical-align: middle;}
+.notif > div{background-color: rgba(12,100,150,0.25);margin-bottom: 10px;padding:10px;text-align: left;border-radius: 5px;position: relative;float:left;width:100%;display: flex;align-items: center;}
+.notif > div .ago{font-family: arial;border-right: 2px solid rgb(12,100,150);width:75px;font-size: 20px;text-align: center;height: 100%;display: inline-block;padding-right: 5px;color:rgb(50,120,150);}
+.notif > div .mesg{font-family: arial;font-size: 20px;text-align: center;height: 100%;display: inline-block;padding-right: 5px;color:rgb(50,120,150);word-break: break-all;margin-left: 10px;text-decoration: underline;}
+
+#searchHead{animation: searchHead 4s infinite;transform-origin: center;}
+#searchHand{animation: searchHand 2.5s infinite;transform-origin: center;}
+
+.srchHlp{background-color: rgba(10,10,10,0.1);width:80%;margin: auto;margin-top: 33px;border-radius: 50px;padding: 10px;}
+.srchHlp span{color:rgb(12,100,150);font-size: 25px;}
+
+@keyframes dltHeadAnim {
+    0%,100% {transform: rotate(0deg) translateY(10px)}
+    60% {transform: rotate(3deg) translateY(0px);}
+  }
+@keyframes dltHandAnim {
+    0%,100% {transform: rotate(8deg)}
+    50% {transform: rotate(0deg)}
+  }
+@keyframes qmarkMove {
+    0%,100% {transform: translateY(-15px)}
+    50% {transform: translateY(0px)}
+  }
+@keyframes quesHead1 {
+    0%,100% {transform: rotate(15deg) translateY(5px);}
+    50% {transform: rotate(0deg)}
+  }
+@keyframes quesHead2 {
+    0%,100% {transform: rotate(-15deg) translate(-5px, 40px);}
+    50% {transform: rotate(0deg) translateY(0px);}
+  }
+@keyframes helloHand{
+    0%,100% {transform: rotate(-15deg) translate(0px);}
+    50% {transform: rotate(0deg) translateY(0px);}
+  }
+@keyframes standHead{
+    0%,100% {transform: rotate(7deg) translateX(-10px);}
+    50% {transform: rotate(0deg) translateY(0px);}
+  }
+@keyframes standHead2{
+    0%,100% {transform: rotate(-10deg) translateX(15px) translateY(7px);}
+    40% {transform: rotate(0deg) translateY(0px);}
+  }
+@keyframes standHand2{
+    0%,100% {transform: rotate(15deg) translateX(-50px) translateY(-25px);;}
+    50% {transform: rotate(0deg) translateY(0px);}
+  }
+@keyframes byeHead1{
+    0%,100% {transform: rotate(10deg) translateX(-35px) translateY(0px);}
+    40% {transform: rotate(0deg) translateY(0px);}
+  }
+@keyframes byeHand1{
+    0%,100% {transform: rotate(-10deg) translateX(30px) translateY(-15px);}
+    40% {transform: rotate(0deg) translateY(0px);}
+  }
+@keyframes waitHead{
+    0%,100% {transform: rotate(10deg) translateX(-35px) translateY(0px);}
+    40% {transform: rotate(0deg) translateY(0px);}
+  }
+@keyframes waitEclm{
+    0%,100%{transform: translateY(10px);}
+    50% {transform: rotate(00deg);}
+  }
+@keyframes waitArm1{
+    0%,100% {transform: rotate(10deg) translateX(35px) translateY(10px);}
+    40% {transform: rotate(0deg) translateX(-5px) translateY(0px);}
+  }
+@keyframes waitArm2{
+    0%,100% {transform: rotate(-10deg) translateX(-40px) translateY(10px);}
+    40% {transform: rotate(0deg) translateX(-5px) translateY(0px);}
+  }
+@keyframes passHand1{
+    0%,100% {transform: rotate(10deg) translateX(-30px) translateY(-65px);}
+    40% {transform: rotate(0deg) translateX(0px) translateY(0px);}
+  }
+@keyframes thinkHand{
+    0%,100% {transform: rotate(10deg)  translateY(-120px);}
+    50% {transform: rotate(0deg) translateX(0px) translateY(5px);}
+  }
+@keyframes thinkHead{
+    0%,100% {transform: rotate(10deg)  translateY(-125px);}
+    50% {transform: rotate(0deg) translateX(0px) translateY(5px);}
+  }
+@keyframes ansMesg{
+    0%,100% {transform: translateY(0px);}
+    50% {transform: translateY(25px);}
+  }
+@keyframes ansHead{
+    0%,100% {transform: rotate(-10deg)  translateY(25px) translateX(20px);}
+    50% {transform: rotate(0deg) translateX(0px) translateY(5px);}
+  }
+@keyframes ansHand{
+    0%,100% {transform: rotate(-15deg)  translateY(25px) translateX(20px);}
+    50% {transform: rotate(0deg) translateX(0px) translateY(5px);}
+  }
+@keyframes starHead{
+    0%,100% {transform: rotate(10deg)  translateY(45px) translateX(-15px);}
+    50% {transform: rotate(0deg) translateX(0px) translateY(5px);}
+  }
+@keyframes starShot{
+    0%{transform: translateY(-550px) translateX(500px);}
+    100% {transform: translateX(-350px) translateY(700px);}
+  }
+@keyframes editHead{
+    0%,100% {transform: rotate(10deg)  translateY(10px) translateX(-2px);}
+    50% {transform: rotate(0deg) translateX(0px) translateY(0px);}
+  }
+@keyframes editPols{
+    0% {transform: rotate(360deg)}
+    100% {transform: rotate(0deg);}
+  }
+@keyframes flagHead{
+    0%,100% {transform: rotate(10deg)  translateY(15px) translateX(-30px);}
+    50% {transform: rotate(0deg) translateX(0px) translateY(0px);}
+  }
+@keyframes flagHand{
+    0%,100% {transform: rotate(10deg)  translateY(15px) translateX(-30px);}
+    50% {transform: rotate(0deg) translateX(0px) translateY(0px);}
+  }
+@keyframes standHead3{
+    0%,100% {transform: translateY(5px);}
+    50% {transform: rotate(0deg) translateX(0px) translateY(0px);}
+  }
+@keyframes standArm13{
+    0%,100% {transform: rotate(-5deg)  translateY(-5px) translateX(20px);}
+    50% {transform: rotate(0deg) translateX(0px) translateY(0px);}
+  }
+@keyframes standArm23{
+    0%,100% {transform: rotate(5deg)  translateY(-5px) translateX(-20px);}
+    50% {transform: rotate(0deg) translateX(0px) translateY(0px);}
+  }
+@keyframes standnotif{
+    20%, 80% {transform: translateY(20%)}
+    100% {transform: translateY(120%)}
+  }
+@keyframes achDone{
+  from{transform: rotate(-360deg) scale(0);}
+  to{transform: rotate(0deg) scale(1);}
+}
+@keyframes searchHead{
+  0%,100% {transform: translateY(10px);}
+  50% {transform: rotate(0deg) translateX(0px) translateY(0px);}
+}
+@keyframes searchHand{
+  0%,100% {transform: translateY(15px) translateX(-30px) rotate(10deg) }
+  50% {transform: translateX(0px) translateY(0px);}
+}
+@keyframes loadScrn{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
+
+@media screen and (max-width: 800px){
+    .homeHead div input{width: 60%;}
+    .homeBase button{float: none;}
+    .sign{width:80%;}
+    .up{margin:none;}
+    .homeHead h1{font-size: 40px;}
+    .homeHead .menu button.prof{right:20px;}
+    .homeHead .menu button.prof img{width:40px;height:40px;}
+    a.menuQues{width:90%;}
+    #err{float: none;position:relative;z-index: 9999;}
+    .profile .ls, .profile .rs{width: 100%;}
+    .profile .ls span{font-size: 25px;}
+    .standChar{display: none;}
+    .dltConf input[type=submit],.dltConf input[type=button]{color: red;width: 90% !important;}
+    .chngPswd{width:80%;}
+    .chngPswd input[type=submit], .chngPswd input[type=button]{width:90% !important;}
+    .profile .rs .profPcSlct{font-size:20px;padding:15px;}
+    .dispUser{text-align: center;font-size: 15px;}
+    .voteArr:hover .arrTop{fill:transparent;}
+    .brkLn{display: inline;}
+    .wrtRepl div{text-align: center;display:flexbox;justify-content:space-between;}
+    .wrtRepl div button{width: 20%; font-size: 12px;}
+    .quesTask{text-align: center;}
+    .edtRepl button{width: 20%;}
+    #edtWrdCnt{text-align: center;display: inline-block; padding: 15px;width: calc(100% - 30px);}
+    .dispAchv div{width:100%;}
+    .homeHead .menu{transform:translateX(12px);}
+    .notif > div .mesg{font-size: 15px;}
+    .notif > div .ago{font-size: 15px;width:55px;}
+}
+@media screen and (max-width: 1150px){
+  .homeHead .quesChar{display: none;}
+  .helloChar{display: none;}
+}
+@media screen and (max-width: 410px){
+  #rprt .main{width:350px;}
+  #rprt .main label{font-size: 20px;}
+}
+@media screen and (max-width: 320px){
+  .wrtRepl div button{font-size: 10px;padding: 1px;}
+}
